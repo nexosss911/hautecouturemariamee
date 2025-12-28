@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    color: #262626;
+    color: #241811;
     background-color: #F7E9CC;
   }
   
@@ -14,7 +14,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #262626;
+    background-color: #241811;
     color: #F7E9CC;
   }
   
@@ -35,10 +35,17 @@ body {
     color: #F7E9CC;
     text-decoration: none;
     font-weight: bold;
+    background-color:rgba(247, 233, 204,0.2) ;
+    border-radius: 20px;
+    padding: 5px 15px;
+    transition: background-color 0.5s , padding 0.5s , color 0.5s ;
   }
   
   header nav ul li a:hover {
-    text-decoration: underline;
+          box-shadow: 20px #F7E9CC ;
+          background-color: #F7E9CC;
+          color:#241811 ;
+          padding: 10px 30px;
   }
   
   /* Section Styling */
@@ -49,7 +56,7 @@ body {
   }
   
   section h2 {
-    color: #262626;
+    color: #241811;
   }
   
   /* Product Styling */
@@ -63,12 +70,15 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid #262626;
+    border: 1px solid #241811;
     border-radius: 8px;
     padding: 1rem;
-    background-color: #fff;
+    background-color: rgba(252, 249, 243, 0.2);
     max-width: 300px;
     text-align: center;
+    transition: box-shadow .5s , transform .5s ;
+    cursor: pointer;
+    position: relative;
   }
   
   .product-card img {
@@ -81,14 +91,33 @@ body {
   .price {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #262626;
+    color: #241811;
+    margin-bottom: 1rem;
+  }
+
+  .view-details-btn {
+    background-color: #241811;
+    color: #F7E9CC;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+  }
+
+  .view-details-btn:hover {
+    background-color: #ebd19c;
+    color: #241811;
+    transform: scale(1.05);
   }
   
   /* Footer Styling */
   footer {
     text-align: center;
     padding: 1rem;
-    background-color: #262626;
+    background-color: #241811;
     color: #F7E9CC;
   }
   
@@ -108,4 +137,79 @@ body {
       flex-direction: column;
     }
   }
-  
+
+  #tit{
+    font-family:'Times New Roman', Times, serif ;
+    text-align: center;
+    font-size: 20px;
+    animation-name: titre;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+  }
+
+  @keyframes titre {
+    from {
+      font-size: 20px;
+    }
+    to {
+      font-size: 30px;
+    }
+  }
+
+  .product-card:hover {
+    box-shadow: 0 8px 22px rgba(38, 38, 38,0.5);
+    transform: translateY(-8px) scale(1.03);
+}
+
+@keyframes slideInFooter {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        color: #F7E9CC;
+        text-shadow: 0 0 5px rgba(247, 233, 204,0.2);
+    }
+    50% {
+        color: #241811;
+        text-shadow: 0 0 15px #241811;
+    }
+    100% {
+        color: #F7E9CC;
+        text-shadow: 0 0 5px rgba(247, 233, 204,0.2);
+    }
+}
+
+footer {
+    animation: slideInFooter 1s ease-in-out forwards;
+    color: #F7E9CC;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    animation: textGlow 3s ease-in-out infinite;
+}
+
+a {
+  color: #F7E9CC;
+  background-color: #241811;
+  border-radius: 5px 5px;
+  padding: 3px;
+}
